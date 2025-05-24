@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Orange - Juguería Natural</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <i class="fas fa-leaf"></i>
+                Fresh Orange
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" onclick="showPage('home')">Inicio</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('jugos')">Jugos & Combos</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('nosotros')">Nosotros</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Página home -->
+    <div id="home" class="page active">
+        <div class="page-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Jugos 100% Naturales</h1>
+                    <p>Descubre el sabor auténtico de la naturaleza en cada sorbo. Preparados con frutas frescas y amor por lo natural.</p>
+                    <a href="#" class="btn-hero" onclick="showPage('jugos')">Ver Nuestro Menú</a>
+                </div>
+            </section>
+
+            <!-- Productos destacados -->
+            <section class="featured">
+                <div class="container">
+                    <h2 class="section-title">Nuestros Favoritos</h2>
+                    <div class="featured-grid">
+                        <div class="featured-card fade-in">
+                            <img src="imgs/jugo-naranja-especial.jpg" alt="Jugo de Naranja Especial">
+                            <div class="card-content">
+                                <h3>Naranja Especial</h3>
+                                <p>Jugo de naranja recién exprimido con un toque de jengibre y miel natural.</p>
+                                <div class="card-price">S/.8.50</div>
+                            </div>
+                        </div>
+                        <div class="featured-card fade-in">
+                            <img src="imgs/batido-tropical.jpg" alt="Batido Tropical">
+                            <div class="card-content">
+                                <h3>Batido Tropical</h3>
+                                <p>Mezcla perfecta de mango, piña y coco con un toque de maracuyá.</p>
+                                <div class="card-price">S/.12.00</div>
+                            </div>
+                        </div>
+                        <div class="featured-card fade-in">
+                            <img src="imgs/combo-energetico.jpg" alt="Combo Energético">
+                            <div class="card-content">
+                                <h3>Combo Energético</h3>
+                                <p>Jugo verde detox + sandwich integral + fruta fresca del día.</p>
+                                <div class="card-price">S/.18.90</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Página de jugos -->
+    <div id="jugos" class="page">
+        <div class="page-content">
+            <section class="menu-section">
+                <div class="container">
+                    <h2 class="section-title">Nuestro Menú</h2>
+                    
+                    <div class="menu-categories">
+                        <button class="category-btn active" onclick="filterMenu('todos')">Todos</button>
+                        <button class="category-btn" onclick="filterMenu('jugos')">Jugos Naturales</button>
+                        <button class="category-btn" onclick="filterMenu('batidos')">Batidos</button>
+                        <button class="category-btn" onclick="filterMenu('combos')">Combos</button>
+                    </div>
+
+                    <div class="menu-grid" id="menuGrid">
+                        <!-- Jugos Naturales -->
+                        <div class="menu-card" data-category="jugos">
+                            <img src="imgs/jugo-naranja-clasico.jpg" alt="Jugo de Naranja Clásico">
+                            <div class="menu-card-content">
+                                <h4>Naranja Clásico</h4>
+                                <p>Jugo de naranja natural recién exprimido, sin azúcar añadida.</p>
+                                <div class="menu-card-price">S/.6.50</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="jugos">
+                            <img src="imgs/jugo-manzana-verde.jpg" alt="Jugo de Manzana Verde">
+                            <div class="menu-card-content">
+                                <h4>Manzana Verde</h4>
+                                <p>Refrescante jugo de manzana verde con un toque de limón.</p>
+                                <div class="menu-card-price">S/.7.00</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="jugos">
+                            <img src="imgs/jugo-verde-detox.jpg" alt="Jugo Verde Detox">
+                            <div class="menu-card-content">
+                                <h4>Verde Detox</h4>
+                                <p>Espinaca, apio, pepino, manzana verde y limón. Ideal para depurar.</p>
+                                <div class="menu-card-price">S/.9.50</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="jugos">
+                            <img src="imgs/jugo-zanahoria-jengibre.jpg" alt="Jugo de Zanahoria con Jengibre">
+                            <div class="menu-card-content">
+                                <h4>Zanahoria & Jengibre</h4>
+                                <p>Jugo energizante de zanahoria fresca con jengibre natural.</p>
+                                <div class="menu-card-price">S/.8.00</div>
+                            </div>
+                        </div>
+
+                        <!-- Batidos -->
+                        <div class="menu-card" data-category="batidos">
+                            <img src="imgs/batido-fresa-banana.jpg" alt="Batido de Fresa y Banana">
+                            <div class="menu-card-content">
+                                <h4>Fresa & Banana</h4>
+                                <p>Cremoso batido con fresas frescas, banana y leche de almendras.</p>
+                                <div class="menu-card-price">S/.10.50</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="batidos">
+                            <img src="imgs/batido-mango-coco.jpg" alt="Batido de Mango y Coco">
+                            <div class="menu-card-content">
+                                <h4>Mango & Coco</h4>
+                                <p>Exótico batido de mango maduro con leche de coco natural.</p>
+                                <div class="menu-card-price">S/.11.00</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="batidos">
+                            <img src="imgs/batido-chocolate-banana.jpg" alt="Batido de Chocolate y Banana">
+                            <div class="menu-card-content">
+                                <h4>Chocolate & Banana</h4>
+                                <p>Delicioso batido con cacao orgánico, banana y leche vegetal.</p>
+                                <div class="menu-card-price">S/.12.50</div>
+                            </div>
+                        </div>
+
+                        <!-- Combos -->
+                        <div class="menu-card" data-category="combos">
+                            <img src="imgs/combo-desayuno-saludable.jpg" alt="Combo Desayuno Saludable">
+                            <div class="menu-card-content">
+                                <h4>Desayuno Saludable</h4>
+                                <p>Jugo natural + tostada integral + frutas + yogurt natural.</p>
+                                <div class="menu-card-price">S/.16.90</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="combos">
+                            <img src="imgs/combo-fit-energy.jpg" alt="Combo Fit Energy">
+                            <div class="menu-card-content">
+                                <h4>Fit Energy</h4>
+                                <p>Batido proteico + barrita de granola + mix de frutos secos.</p>
+                                <div class="menu-card-price">S/.19.50</div>
+                            </div>
+                        </div>
+
+                        <div class="menu-card" data-category="combos">
+                            <img src="imgs/combo-detox-completo.jpg" alt="Combo Detox Completo">
+                            <div class="menu-card-content">
+                                <h4>Detox Completo</h4>
+                                <p>Jugo verde + ensalada fresca + agua infusionada + té antioxidante.</p>
+                                <div class="menu-card-price">S/.22.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Página de jugos -->
+    <div id="nosotros" class="page">
+        <div class="page-content">
+            <section class="about-hero">
+                <div class="about-content">
+                    <h1>Nuestra Historia</h1>
+                    <p>Desde 2018, comprometidos con tu bienestar a través de jugos 100% naturales</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h3>Nuestra Misión</h3>
+                            <p>En Fresh Orange creemos que la naturaleza nos brinda todo lo que necesitamos para vivir de manera saludable. Por eso, seleccionamos cuidadosamente las mejores frutas y verduras frescas para crear jugos que no solo sean deliciosos, sino que también nutran tu cuerpo y alma.</p>
+                            <p>Cada jugo es preparado al momento, garantizando que conserves todos los nutrientes y el sabor auténtico de los ingredientes naturales.</p>
+                        </div>
+                        <div class="about-img">
+                            <img src="imgs/about-mision.jpg" alt="Nuestra Misión">
+                        </div>
+                    </div>
+
+                    <div class="about-grid">
+                        <div class="about-img">
+                            <img src="imgs/about-valores.jpg" alt="Nuestros Valores">
+                        </div>
+                        <div class="about-text">
+                            <h3>Nuestros Valores</h3>
+                            <p><strong>Calidad:</strong> Utilizamos únicamente ingredientes frescos y de primera calidad, sin conservantes ni aditivos artificiales.</p>
+                            <p><strong>Sostenibilidad:</strong> Apoyamos a productores locales y utilizamos envases eco-amigables para cuidar nuestro planeta.</p>
+                            <p><strong>Bienestar:</strong> Cada producto está diseñado para contribuir a tu salud y bienestar integral.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de newsletter -->
+            <section class="newsletter">
+                <div class="newsletter-content">
+                    <h3>¡Únete a nuestra comunidad!</h3>
+                    <p>Recibe ofertas especiales, recetas saludables y tips de bienestar directamente en tu correo</p>
+                    
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="form-group">
+                            <input type="text" class="form-input" id="userName" placeholder="Tu nombre" required>
+                            <input type="email" class="form-input" id="userEmail" placeholder="Tu correo electrónico" required>
+                            <button type="submit" class="btn-newsletter">Suscribirme</button>
+                        </div>
+                    </form>
+                    
+                    <div class="success-message" id="successMessage">
+                        ¡Gracias por suscribirte! Pronto recibirás noticias de Fresh Orange.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fresh Orange</h4>
+                    <p>Tu juguería de confianza desde 2018. Comprometidos con tu salud y bienestar a través de productos 100% naturales.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Miraflores</p>
+                    <p><i class="fas fa-phone"></i> 924 465 654</p>
+                    <p><i class="fas fa-envelope"></i> info@freshorange.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lunes a Viernes: 7:00 AM - 8:00 PM</p>
+                    <p>Sábados: 8:00 AM - 9:00 PM</p>
+                    <p>Domingos: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <p><a href="#" onclick="showPage('home')">Inicio</a></p>
+                    <p><a href="#" onclick="showPage('jugos')">Menú</a></p>
+                    <p><a href="#" onclick="showPage('nosotros')">Nosotros</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Web creada por Eleazar Cordero y Robert Salas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
